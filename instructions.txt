@@ -1,0 +1,54 @@
+1. Open Kibana and go to:  /Machine Learning > Data Visualizer
+2. Upload/Import accounts.json
+3. Go to Import Data Advanced
+
+Index settings:
+
+{
+  "number_of_shards": 1
+}
+
+Mappings:
+
+{
+  "properties": {
+    "account_number": {
+      "type": "long"
+    },
+    "address": {
+      "type": "text"
+    },
+    "age": {
+      "type": "long"
+    },
+    "balance": {
+      "type": "long"
+    },
+    "city": {
+      "type": "text"
+    },
+    "email": {
+      "type": "text"
+    },
+    "employer": {
+      "type": "text"
+    },
+    "firstname": {
+      "type": "text"
+    },
+    "gender": {
+      "type": "keyword"
+    },
+    "index": {
+      "type": "object"
+    },
+    "lastname": {
+      "type": "text"
+    },
+    "state": {
+      "type": "keyword"
+    }
+  }
+}
+
+Import

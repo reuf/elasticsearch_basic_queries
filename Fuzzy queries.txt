@@ -1,0 +1,43 @@
+Fuzzy queries:
+
+GET /accounts/_search
+{
+  "query": {
+    "match": {
+      "city": "edenburg"
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "fuzzy": {
+      "city": {
+        "value": "edenburg"
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "fuzzy": {
+      "city": {
+        "value": "edenborg"
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "fuzzy": {
+      "city": {
+        "value": "edeng"
+      }
+    }
+  }
+}

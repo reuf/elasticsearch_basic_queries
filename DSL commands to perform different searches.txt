@@ -1,0 +1,71 @@
+DSL commands to perform different searches:
+
+GET /accounts/_search
+{
+  "query": {
+    "match": {
+      "firstname": "huff dale"
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "term": {
+      "firstname": {
+        "value": "huff dale"
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "ford",
+      "fields": ["firstname","address"]
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "match_phrase": {
+      "address": "sedgwick street"
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "match_phrase": {
+      "address": "street"
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "wildcard": {
+      "firstname": {
+        "value": "h*ll"
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "wildcard": {
+      "firstname": {
+        "value": "h*"
+      }
+    }
+  }
+}

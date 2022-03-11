@@ -1,0 +1,45 @@
+Range queries:
+
+GET /accounts/_search
+{
+  "query": {
+    "range": {
+      "balance": {
+        "gte": 10000
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "range": {
+      "balance": {
+        "gte": 10000,
+        "lte": 40000
+      }
+    }
+  }
+}
+
+GET /accounts/_search
+{
+  "query": {
+    "bool": {
+      "must": {
+        "range": {
+          "age": {
+            "gte": 30,
+            "lte": 40
+          }
+        }
+      },
+      "must_not": {
+        "term": {
+          "state": "il"
+        }
+      }
+    }
+  }
+}
